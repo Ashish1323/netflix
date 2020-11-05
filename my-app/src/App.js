@@ -1,14 +1,17 @@
 import Navbar from "./Navbar";
 import Row from "./Row";
+import requests from "./requests";
+
 
 
 function App() {
   return (
     <div className="App">
-      <Row title="Trending" />
-      <Row title="Horror" />
-
       <Navbar />
+      <Row title="Trending" fetchUrl={requests.fetchNetflixOriginals} />
+      <Row title="Horror" fetchUrl={requests.fetchTrending} />
+
+      
     </div>
   );
 }
